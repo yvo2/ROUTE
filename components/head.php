@@ -9,4 +9,5 @@ if (isset($title) && isset($page)) {
 <head>
   <meta charset="utf-8">
   <title><?php echo $title; ?></title>
+  <link href="https://fonts.googleapis.com/css?family=Arimo" rel="stylesheet">
 </head>
