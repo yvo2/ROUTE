@@ -2,7 +2,7 @@
 if (isset($title) && isset($page)) {
   $title = $title . ' - ' . $page;
 } else {
-  $title = 'RoundTripper';
+  $title = 'ROUTE';
 }
 
 ?>
