@@ -4,6 +4,7 @@ body {
 
 .navbar {
   margin-bottom: 0;
+  background-color: rgb(193, 9, 0);
 }
 
 .jumbotron {
@@ -11,6 +12,10 @@ body {
   padding-bottom: 6rem;
   margin-bottom: 0;
   background-color: #fff;
+}
+
+.rt-validaton {
+  color: rgb(193, 9, 0);
 }
 
 .jumbotron p:last-child {

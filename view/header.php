@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <title><?php echo $title; ?> - ROUTE</title>
   <link href="https://fonts.googleapis.com/css?family=Arimo" rel="stylesheet">
-  <link href="css/style.css" rel="stylesheet">
-  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="/css/style.css" rel="stylesheet">
+  <link href="/css/bootstrap.min.css" rel="stylesheet">
 
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
@@ -31,7 +31,7 @@
         </div>
       </div>
     </div>-->
-    <div class="navbar navbar-dark bg-dark">
+    <div class="navbar navbar-dark">
       <div class="container d-flex justify-content-between">
         <a href="/" class="navbar-brand">ROUTE</a>
         <!--<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
