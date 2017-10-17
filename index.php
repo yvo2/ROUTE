@@ -2,7 +2,7 @@
 session_start();
 
 // Site information
-$title = 'RoundTripper';
+$title = 'ROUTE';
 $page = 'Home';
 
 // User inputs
