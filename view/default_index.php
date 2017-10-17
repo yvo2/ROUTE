@@ -19,7 +19,7 @@
           <hr>
         <?php
         if (!$connectionResponse->hasConnections()) {
-          echo 'Keine Verbindung verfügbar. :(';
+          echo 'Keine Verbindung verfügbar';
         } else {
           foreach ($connectionResponse->getConnections() as $connection) {
             ?>
