@@ -4,7 +4,7 @@
     <p class="lead text-muted">Finde eine Exkursion!</p>
     <form method="post" class="rt-search">
       <label class="text-muted" for="rt-homebase">Homebase: </label><input value="<?= $homebase ?>" placeholder="z.B. Bern" class="form-control" id="rt-homebase" name="rt-homebase" type="text"><br>
-      <label class="text-muted" for="rt-via">Was möchtest du entdecken? </label><input value="<?= $via ?>" placeholder="z.B. Locarno" class="form-control" id="rt-via" name="rt-via" type="text"><br>
+      <label class="text-muted" for="rt-via">Welche Destination möchtest du besuchen? </label><input value="<?= $via ?>" placeholder="z.B. Locarno" class="form-control" id="rt-via" name="rt-via" type="text"><br>
       <input class="btn btn-primary"type="submit" value="Los gehts!">
     </form>
   </div>
@@ -15,19 +15,20 @@
     <?php
       if (strlen($homebase) != 0 && strlen($via) != 0) {
         ?>
-          Von <?= $homebase ?> nach <?= $via ?> und zurück.
+          Von <?= $homebase ?> nach <?= $via ?> und zurück nach <?= $homebase ?>.
           <hr>
         <?php
         if (!$connectionResponse->hasConnections()) {
           echo 'Keine Verbindung verfügbar. :(';
         } else {
           foreach ($connectionResponse->getConnections() as $connection) {
-            echo('<div class="card">');
-            echo("Duration: $connection->duration<br>");
-            echo("From: $connection->from<br>");
-            echo("To: $connection->to<br>");
-            echo("Via: {$connection->getVias()}");
-            echo('</div>');
+            ?>
+            <div class="card">
+            <p class="cardtext">Dauer: <?= $connection->duration ?><br></p>
+            <p class="cardtext">Homebase: <?= $connection->from ?><br></p>
+            <p class="cardtext">Via: <?= $connection->getVias() ?></p>
+            </div>
+            <?php
           }
         }
 
