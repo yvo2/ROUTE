@@ -7,6 +7,7 @@ class Connection {
   public $duration;
   public $arrival;
   public $departure;
+  public $sections = array();
 
   public function __construct($connection) {
     $this->from = $connection->from->station->name;
@@ -14,6 +15,10 @@ class Connection {
     $this->duration = $connection->duration;
     $this->arrival = $connection->to->arrival;
     $this->departure = $connection->from->departure;
+
+    foreach ($connection->sections as $section) {
+      $this->sections[] = $section;
+    }
   }
 
   public function getFrom() {
@@ -33,7 +38,13 @@ class Connection {
    * @return string comma-seperated
    */
   public function getVias() {
-    return "TBD";
+    $result = "";
+
+    foreach ($this->sections as $section) {
+      $result .= $section->arrival->station->name . ", ";
+    }
+
+    return substr($result, 0, -2);
   }
 
 }
