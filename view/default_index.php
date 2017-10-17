@@ -26,7 +26,7 @@
             <div class="card">
             <p class="cardtext">Dauer: <?= $connection->duration ?><br></p>
             <p class="cardtext">Homebase: <?= $connection->from ?><br></p>
-            <p class="cardtext">Via: <?= $connection->getVias() ?></p>
+            <p class="cardtext">Umsteigeorte: <?= $connection->getVias() ?></p>
             </div>
             <?php
           }
