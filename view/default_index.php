@@ -1,6 +1,6 @@
 <?php
-  $config = require('components/config.php');
-  require_once('src/Connection.php');
+  $config = require('../config/config.php');
+  require_once('../src/Connection.php');
 ?>
 
 <section class="jumbotron text-center">

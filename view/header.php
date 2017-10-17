@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <title><?php echo $title; ?> - ROUTE</title>
   <link href="https://fonts.googleapis.com/css?family=Arimo" rel="stylesheet">
-  <link href="public/css/style.css" rel="stylesheet">
-  <link href="public/css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
 
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
