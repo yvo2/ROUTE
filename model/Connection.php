@@ -28,6 +28,14 @@ class Connection {
     return $this->duration;
   }
 
+  /**
+   * Get a comma-seperated list of all vias
+   * @return string comma-seperated
+   */
+  public function getVias() {
+    return "TBD";
+  }
+
 }
 
  ?>

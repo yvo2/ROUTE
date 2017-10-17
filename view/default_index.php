@@ -26,6 +26,7 @@
             echo("Duration: $connection->duration<br>");
             echo("From: $connection->from<br>");
             echo("To: $connection->to<br>");
+            echo("Via: {$connection->getVias()}");
             echo('</div>');
           }
         }
