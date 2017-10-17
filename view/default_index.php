@@ -1,8 +1,3 @@
-<?php
-  $config = require('../config/config.php');
-  require_once('../src/Connection.php');
-?>
-
 <section class="jumbotron text-center">
   <div class="container">
     <h1 class="jumbotron-heading">ROUTE</h1>
@@ -23,20 +18,11 @@
           Von <?= $homebase ?> nach <?= $via ?> und zurück.
           <hr>
         <?php
-
-        // Request
-        $from = $homebase;
-        $to = $homebase;
-
-        $response = file_get_contents($config["endpoint_url"].'?from='.$from.'&to='.$to.'&via='.$via);
-
-        $parsed = json_decode($response);
-
-        if (count($parsed->connections) == 0) {
+        var_dump($connectionResponse);
+        if (!$connectionResponse->hasConnections()) {
           echo 'Keine Verbindung verfügbar. :(';
         } else {
-          foreach ($parsed->connections as $connection) {
-            $connection = new Connection($connection);
+          foreach ($connectionResponse->getConnections() as $connection) {
             echo('<div class="card">');
             echo("Duration: $connection->duration<br>");
             echo("From: $connection->from<br>");

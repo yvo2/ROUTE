@@ -1,6 +1,7 @@
 <?php
 
-$config = require('config/config.php');
+require_once '../model/ConnectionResponse.php';
+require_once '../config/config.php';
 
 /**
  * This repository does not access a database.
@@ -14,9 +15,13 @@ class ConnectionRepository {
    *
    * @param from Locaton where to start
    * @param vias Array of Locations to visit
+   * @return ConnectionResponse Object
    */
-  public function getConnectionsResult($from, $vias) {
-    
+  public function getConnectionResult($from, $vias) {
+    global $config;
+    $connections = file_get_contents($config["endpoint_url"].'?from='.$from.'&to='.$from.'&via='.$vias);
+    $parsedConnections = json_decode($connections);
+    return new ConnectionResponse($parsedConnections);
   }
 
 }
