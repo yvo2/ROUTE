@@ -14,6 +14,7 @@ class UserController {
 
     public function register() {
       $view = new View('user_register');
+      $view->title = "Register";
       $view->valid = true;
       $view->email = '';
       $view->emailValidationMessage = '';

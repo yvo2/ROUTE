@@ -18,6 +18,11 @@ body {
   color: rgb(193, 9, 0);
 }
 
+.rt-btn {
+  background-color: rgb(193, 9, 0) !important;
+  border-color: rgb(193, 9, 0) !important;
+}
+
 .jumbotron p:last-child {
   margin-bottom: 0;
 }
