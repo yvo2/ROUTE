@@ -3,10 +3,10 @@
 
 <footer class="text-muted">
 <div class="container">
-  <p class="float-right">
+  <!--<p class="float-right">
     <a href="#">Back to top</a>
-  </p>
-  <p>New to Bootstrap? <a href="../../">Visit the homepage</a> or read our <a href="../../getting-started/">getting started guide</a>.</p>
+  </p>-->
+  <p>&copy; by Yvo Hofer and Lars Bärtschi. <a href="/impressum">Impressum</a></p>
 </div>
 </footer>
 
