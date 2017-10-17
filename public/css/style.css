@@ -37,6 +37,11 @@ body {
   padding: .75rem;
   margin-bottom: 2rem;
   border: 0;
+  font-size: bold;
+}
+
+.cardtext {
+  margin-bottom: 5px;
 }
 
 .rt-results {
@@ -45,10 +50,6 @@ body {
 
 .card > img {
   margin-bottom: .75rem;
-}
-
-.card-text {
-  font-size: 85%;
 }
 
 footer {
