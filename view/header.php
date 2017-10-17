@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title><?php echo $title; ?></title>
+  <title><?php echo $title; ?> - ROUTE</title>
   <link href="https://fonts.googleapis.com/css?family=Arimo" rel="stylesheet">
   <link href="public/css/style.css" rel="stylesheet">
   <link href="public/css/bootstrap.min.css" rel="stylesheet">
