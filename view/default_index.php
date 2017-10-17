@@ -18,7 +18,6 @@
           Von <?= $homebase ?> nach <?= $via ?> und zurück.
           <hr>
         <?php
-        var_dump($connectionResponse);
         if (!$connectionResponse->hasConnections()) {
           echo 'Keine Verbindung verfügbar. :(';
         } else {
