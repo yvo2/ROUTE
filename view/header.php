@@ -13,7 +13,7 @@
 
 </head>
 <body>
-    <div class="collapse bg-dark" id="navbarHeader">
+    <!--<div class="collapse bg-dark" id="navbarHeader">
       <div class="container">
         <div class="row">
           <div class="col-sm-8 py-4">
@@ -30,13 +30,13 @@
           </div>
         </div>
       </div>
-    </div>
+    </div>-->
     <div class="navbar navbar-dark bg-dark">
       <div class="container d-flex justify-content-between">
         <a href="/" class="navbar-brand">ROUTE</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+        <!--<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
-        </button>
+        </button>-->
       </div>
     </div>
 
