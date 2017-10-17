@@ -24,10 +24,11 @@
       } else {
         foreach ($parsed->connections as $connection) {
           $connection = new Connection($connection);
+          echo('<div class="card">');
           echo("Duration: $connection->duration<br>");
           echo("From: $connection->from<br>");
           echo("To: $connection->to<br>");
-          echo('<hr>');
+          echo('</div>');
         }
       }
 
