@@ -48,7 +48,7 @@ class Dispatcher
         }
         // Den gewünschten Controller laden
         //   Achtung! Hier stützt PHP ab, sollte der Controller nicht existieren
-        // require_once "../controller/$controllerName.php";
+        require_once "../controller/$controllerName.php";
         // Eine neue Instanz des Controllers wird erstellt und die gewünschte
         //   Methode darauf aufgerufen.
         $controller = new $controllerName();

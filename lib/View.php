@@ -58,7 +58,7 @@ class View
     private $properties = array();
     public function __construct($viewfile)
     {
-        $this->viewfile = "view/$viewfile.php";
+        $this->viewfile = "../view/$viewfile.php";
     }
     public function __set($key, $value)
     {
@@ -75,8 +75,8 @@ class View
     public function display()
     {
         extract($this->properties);
-        require 'view/header.php';
+        require '../view/header.php';
         require $this->viewfile;
-        require 'view/footer.php';
+        require '../view/footer.php';
     }
 }
