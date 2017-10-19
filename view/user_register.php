@@ -6,6 +6,8 @@
     <div class="rt-validation"><?= $emailValidationMessage ?></div>
     <label class="text-muted" for="rt-password">Passwort: </label><input placeholder="Passwort" class="form-control" id="rt-password" name="rt-password" type="password"><br>
     <div class="rt-validation"><?= $passwordValidationMessage ?></div>
-    <input class="rt-btn btn btn-primary"type="submit" value="Los gehts!">
+    <label class="text-muted" for="rt-password">Passwort wiederholen: </label><input placeholder="Passwort" class="form-control" id="rt-password-repeat" name="rt-password-repeat" type="password"><br>
+    <div class="rt-validation"><?= $passwordValidationRepeatMessage ?></div>
+    <input class="rt-btn btn btn-primary" type="submit" value="Los gehts!">
   </form>
 </div>

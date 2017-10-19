@@ -19,10 +19,12 @@ class UserController {
       $view->email = '';
       $view->emailValidationMessage = '';
       $view->passwordValidationMessage = '';
+      $view->passwordValidationRepeatMessage = '';
 
       if ($_SERVER["REQUEST_METHOD"] == "POST") {
         @$email = $_POST["rt-email"];
         @$password = $_POST["rt-password"];
+        @$passwordrepeat = $_POST["rt-password-repeat"];
 
         // Validate email
         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
@@ -33,6 +35,21 @@ class UserController {
         if (strlen($password) < 8) {
           $view->passwordValidationMessage = "Bitte Passwort eingeben, welches mindestens 8 Zeichen lang ist.";
           $view->valid = false;
+        }
+
+        if (strlen($passwordrepeat) < 8) {
+          $view->passwordValidationRepeatMessage = "Bitte das Passwort wiederholen.";
+          $view->valid = false;
+        }
+
+        if (!($passwordrepeat == $password)) {
+          $view->passwordValidationRepeatMessage = "Bitte das Passwort korrekt wiederholen.";
+          $view->valid = false;
+        }
+
+        if ($view->valid) {
+          var_dump('Registered');
+          die();
         }
 
         $view->email = $email;
