@@ -19,9 +19,17 @@ class ConnectionRepository {
    */
   public function getConnectionResult($from, $vias) {
     global $config;
-    $connections = file_get_contents($config["endpoint_url"].'?from='.$from.'&to='.$from.'&via='.$vias);
+    $requesturl = $config["endpoint_url"].'?from='.$from.'&to='.$from.$this->getViaStrings($vias);
+    $connections = file_get_contents($requesturl);
     $parsedConnections = json_decode($connections);
     return new ConnectionResponse($parsedConnections);
+  }
+
+  public function getViaStrings($vias) {
+    $vias = array_filter($vias);
+    $result = "&via[]=";
+    $result .= implode('&via[]=', $vias);
+    return $result;
   }
 
 }

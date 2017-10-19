@@ -33,6 +33,15 @@ class Connection {
     return $this->duration;
   }
 
+  public function getDurationFormatted() {
+    $timeString = explode('d', $this->getDuration())[1];
+    $times = explode(':', $timeString);
+    $hours = intval($times[0]);
+    $minutes = intval($times[1]);
+
+    return "Diese Reise dauert $hours Stunden und $minutes Minuten";
+  }
+
   /**
    * Get a comma-seperated list of all vias
    * @return string comma-seperated
@@ -40,7 +49,11 @@ class Connection {
   public function getVias() {
     $result = "";
 
-    foreach ($this->sections as $section) {
+    //$trainChanges = array_pop($this->sections);
+    $trainChanges = $this->sections;
+    unset($trainChanges[count($trainChanges)-1]);
+
+    foreach ($trainChanges as $section) {
       $result .= $section->arrival->station->name . ", ";
     }
 

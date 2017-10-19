@@ -10,7 +10,12 @@ class DefaultController
         $connectionRepository = new ConnectionRepository();
 
         @$homebase = $_POST["rt-homebase"];
-        @$via = $_POST["rt-via"];
+        $via = array();
+        @$via[] = $_POST["rt-via0"];
+        @$via[] = $_POST["rt-via1"];
+        @$via[] = $_POST["rt-via2"];
+        @$via[] = $_POST["rt-via3"];
+        @$via[] = $_POST["rt-via4"];
 
         $view = new View('default_index');
         $view->title = 'Finden';
