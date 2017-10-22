@@ -30,14 +30,14 @@
  * Sobald die Funktion display() auf der view aufgerufen wird, passieren die
  * folgenden drei Schritte.
  *   1. Die Datei "header.php" aus dem View Verzeichnis wird gerendert. Darin
- *        sollte ger Ganze HTML Code sein, welcher bei allen seiten gleich ist
+ *        sollte der gesamte HTML Code sein, welcher bei allen Seiten gleich ist
  *        und vor den Inhalt kommt. Dadurch entstehen keine Redundanzen.
- *   2. Die Datei, welche o heisst wie im Konstruktor übergeben wird gerendert.
- *        Darin sollte ger Ganze HTML Code sein, welcher speziell für diese
+ *   2. Die Datei, welche "o" heisst, wie im Konstruktor übergeben, wird gerendert.
+ *        Darin sollte der gesamte HTML Code sein, welcher speziell für diese
  *        Seite gedacht ist.
  *   3. Die Datei "footer.php" aus dem View Verzeichnis wird gerendert. Darin
- *        sollte ger Ganze HTML Code sein, welcher bei allen seiten gleich ist
- *        und nach dem Inhalt. Dadurch entstehen keine Redundanzen.
+ *        sollte der gesamte HTML Code sein, welcher bei allen Seiten gleich ist.
+ *        Dadurch entstehen keine Redundanzen.
  *
  * In allen drei Schritten stehen die vom Controller übergebenen Variablen zur
  * Verfügung. Diese können in den Viewfiles wie folgt ausgegeben werden.

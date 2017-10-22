@@ -22,7 +22,7 @@
 class Dispatcher
 {
     /**
-     * Diese Methode wertet die Request URI aus leitet die Anfrage entsprechend
+     * Diese Methode wertet die Request URI aus und leitet die Anfrage entsprechend
      * weiter.
      */
     public static function dispatch()

@@ -64,7 +64,7 @@ require_once 'ConnectionHandler.php';
  * -----------------------------------------------------------------------------
  * -- Errorhandling ------------------------------------------------------------
  * Sollten bei der Interaktion mit der Datenbank Fehler auftreten, macht es
- * sinn, Exceptions zu werfen.
+ * Sinn, Exceptions zu werfen.
  *
  *   $statement = ...
  *   if (!$statement->execute()) {
@@ -74,9 +74,9 @@ require_once 'ConnectionHandler.php';
 class Repository
 {
     /**
-     * Damit die generischen Querys wisse, um welche Tabelle es sich handelt,
-     * gibt es diese Variabel. Diese muss in den konkreten Implementationen mit
-     * dem Tabellennamen überschrieben werden. (Siehe beispiel oben).
+     * Damit die generischen Querys wissen, um welche Tabellen es sich handelt,
+     * wurde diese Variable generiert. Diese muss in den konkreten Implementationen mit
+     * dem Tabellennamen überschrieben werden. (Siehe Beispiel oben).
      */
     protected $tableName = null;
     /**
@@ -92,8 +92,8 @@ class Repository
     {
         // Query erstellen
         $query = "SELECT * FROM {$this->tableName} WHERE id=?";
-        // Datenbankverbindung anfordern und, das Query "preparen" (vorbereiten)
-        // und die Parameter "binden"
+        // Datenbankverbindung anfordern und, das Query vorbereiten,
+        // sowie die Parameter "binden"
         $statement = ConnectionHandler::getConnection()->prepare($query);
         $statement->bind_param('i', $id);
         // Das Statement absetzen
