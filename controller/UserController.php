@@ -1,5 +1,6 @@
 <?php
 require_once '../repository/UserRepository.php';
+require_once '../lib/SessionManager.php';
 
 class UserController {
 
@@ -13,6 +14,7 @@ class UserController {
     }
 
     public function register() {
+      $userRepository = new UserRepository();
       $view = new View('user_register');
       $view->title = "Register";
       $view->valid = true;
@@ -48,8 +50,13 @@ class UserController {
         }
 
         if ($view->valid) {
-          var_dump('Registered');
-          die();
+          try {
+            // Create user in database
+            $id = $userRepository->create($email, $password);
+            $sessionManager->signInAsId($id);
+            header("Location: /?registered=true");
+            die('<a href="/?registered=true">Weiter.</a>');
+          }
         }
 
         $view->email = $email;

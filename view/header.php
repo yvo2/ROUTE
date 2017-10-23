@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title><?php echo $title; ?> - ROUTE</title>
+  <title><?= $title ?> - ROUTE</title>
   <link href="/css/bootstrap.min.css" rel="stylesheet">
   <link href="/css/style.css" rel="stylesheet">
 
@@ -15,6 +15,9 @@
     <div class="navbar navbar-dark">
       <div class="container d-flex justify-content-between">
         <a href="/" class="navbar-brand">ROUTE</a>
+      </div>
+      <div class="container d-flex pull-right justify-content-between">
+        <a href="/User"><?= $user->email ?></a>
       </div>
     </div>
 
