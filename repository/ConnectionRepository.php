@@ -20,7 +20,10 @@ class ConnectionRepository {
   public function getConnectionResult($from, $vias) {
     global $config;
     $requesturl = $config["endpoint_url"].'?from='.$from.'&to='.$from.$this->getViaStrings($vias);
-    $connections = file_get_contents($requesturl);
+    @$connections = file_get_contents($requesturl);
+    if ($connections == null) {
+      die("Es ist ein Fehler aufgetreten. <a href='/'>Zurück</a>");
+    }
     $parsedConnections = json_decode($connections);
     return new ConnectionResponse($parsedConnections);
   }

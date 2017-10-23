@@ -7,13 +7,13 @@ class DefaultController extends Controller {
     public function index() {
         $connectionRepository = new ConnectionRepository();
 
-        @$homebase = $_POST["rt-homebase"];
+        @$homebase = htmlspecialchars($_POST["rt-homebase"]);
         $via = array();
-        @$via[] = $_POST["rt-via0"];
-        @$via[] = $_POST["rt-via1"];
-        @$via[] = $_POST["rt-via2"];
-        @$via[] = $_POST["rt-via3"];
-        @$via[] = $_POST["rt-via4"];
+        @$via[] = htmlspecialchars($_POST["rt-via0"]);
+        @$via[] = htmlspecialchars($_POST["rt-via1"]);
+        @$via[] = htmlspecialchars($_POST["rt-via2"]);
+        @$via[] = htmlspecialchars($_POST["rt-via3"]);
+        @$via[] = htmlspecialchars($_POST["rt-via4"]);
 
         $view = new View('default_index');
         $view->title = 'Finden';

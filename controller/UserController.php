@@ -28,9 +28,9 @@ class UserController extends Controller {
       $view->passwordValidationRepeatMessage = '';
 
       if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        @$email = $_POST["rt-email"];
-        @$password = $_POST["rt-password"];
-        @$passwordrepeat = $_POST["rt-password-repeat"];
+        @$email = htmlspecialchars($_POST["rt-email"]);
+        @$password = htmlspecialchars($_POST["rt-password"]);
+        @$passwordrepeat = htmlspecialchars($_POST["rt-password-repeat"]);
 
         // Validate email
         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
@@ -81,8 +81,8 @@ class UserController extends Controller {
         $userRepository = new userRepository();
         $sessionManager = new SessionManager();
 
-        @$email = $_POST["rt-email"];
-        @$password = $_POST["rt-password"];
+        @$email = htmlspecialchars($_POST["rt-email"]);
+        @$password = htmlspecialchars($_POST["rt-password"]);
 
         $view->email = $email;
 
