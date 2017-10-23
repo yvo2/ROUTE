@@ -45,22 +45,44 @@
   padding: .75rem;
   margin-bottom: 2rem;
   border: 0;
-  font-size: bold;
 }
 
 .cardtext {
   margin-bottom: 5px;
 }
 
-.rt-results {
+.rt-text {
   width: 100%;
   margin-top: 15px;
   text-align: center;
   font-size: 18px;
 }
 
+.rt-results {
+  width: 100%;
+}
+
+.rt-errortext {
+  width: 100%;
+  margin-top: 15px;
+  text-align: center;
+  font-size: 18px;
+}
+
+.text-white {
+  text-decoration: none;
+  color: white !important;
+}
+
+.textmargin {
+  margin-right: 10px;
+}
+
 .card > img {
   margin-bottom: .75rem;
+  width: 100%;
+  margin-top: 5px;
+  text-align: left;
 }
 
 footer {

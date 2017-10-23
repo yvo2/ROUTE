@@ -19,7 +19,7 @@
     <?php
       if (strlen($homebase) != 0 && count($via) != 0) {
         ?>
-          Von <?= $homebase ?> nach <?= $via[0] ?> und zurück nach <?= $homebase ?>.
+          <div class="rt-text"> Von <?= $homebase ?> nach <?= $via[0] ?> und zurück nach <?= $homebase ?>. </div>
           <hr>
         <?php
         if (!$connectionResponse->hasConnections()) {
@@ -32,15 +32,17 @@
             <p class="cardtext">Homebase: <?= $connection->from ?><br></p>
             <p class="cardtext">Umsteigeorte: <?= $connection->getVias() ?></p>
             </div>
+
+
             <?php
           }
         }
-
       } else {
         ?>
-          Bitte fülle die erforderlichen Textfelder aus
+          <div class="rt-errortext">Bitte fülle die erforderlichen Textfelder aus</div>
         <?php
       }
      ?>
+
   </div>
 </div>
