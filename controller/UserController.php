@@ -70,6 +70,35 @@ class UserController extends Controller {
       $view->display();
     }
 
+    public function login() {
+      $view = new View('user_login');
+      $view->user = $this->getUser();
+      $view->email = '';
+      $view->password = '';
+      $view->loginSummary = '';
+
+      if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        $userRepository = new userRepository();
+        $sessionManager = new SessionManager();
+
+        @$email = $_POST["rt-email"];
+        @$password = $_POST["rt-password"];
+
+        $view->email = $email;
+
+        if ($userRepository->existsUser($email, $password)) {
+          $id = $userRepository->readByCredentials($email, $password)->id;
+          $sessionManager->signInAsId($id);
+          header("Location: /User?login=true");
+          die('<a href="/User?login=true">Weiter.</a>');
+        } else {
+          $view->loginSummary = 'Benutzername oder Passwort sind falsch.';
+        }
+      }
+
+      $view->display();
+    }
+
     public function create() {
         $view = new View('user_create');
         $view->title = 'Benutzer erstellen';

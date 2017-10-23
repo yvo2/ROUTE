@@ -35,4 +35,34 @@ class UserRepository extends Repository
         }
         return $statement->insert_id;
     }
+
+    public function existsUser($email, $password) {
+      $password = sha1($password);
+
+      $query = "SELECT * FROM $this->tableName WHERE email = ? AND password = ?";
+      $statement = ConnectionHandler::getConnection()->prepare($query);
+      $statement->bind_param('ss', $email, $password);
+
+      if (!$statement->execute()) {
+          throw new Exception($statement->error);
+      }
+      $result = $statement->get_result();
+      return $result->num_rows != 0;
+    }
+
+    public function readByCredentials($email, $password) {
+      $password = sha1($password);
+
+      $query = "SELECT * FROM $this->tableName WHERE email = ? AND password = ?";
+      $statement = ConnectionHandler::getConnection()->prepare($query);
+      $statement->bind_param('ss', $email, $password);
+
+      if (!$statement->execute()) {
+          throw new Exception($statement->error);
+      }
+      $result = $statement->get_result();
+      $row = $result->fetch_object();
+      $result->close();
+      return $row;
+    }
 }
