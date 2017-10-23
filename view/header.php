@@ -17,11 +17,11 @@
         <a href="/" class="navbar-brand">ROUTE</a>
         <div class="form-inline my-2 my-lg-0">
           <?php if ($user->signedIn) { ?>
-          <a href="/User" class="text-white"><?= "Hallo, " . $user->email . "." ?></a>
-        <?php } else { ?>
-          <a href="/User/register" class="text-white textmargin">Registrieren</a>
-          <a href="/User/login" class="text-white">Anmelden</a>
-        <?php } ?>
+            <a href="/User" class="text-white"><?= "Hallo, " . $user->email . "." ?></a>
+          <?php } else { ?>
+            <a href="/User/register" class="text-white textmargin">Registrieren</a>
+            <a href="/User/login" class="text-white">Anmelden</a>
+          <?php } ?>
         </div>
       </div>
 

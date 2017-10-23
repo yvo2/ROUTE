@@ -1,8 +1,9 @@
 <?php
 require_once '../repository/UserRepository.php';
 require_once '../lib/SessionManager.php';
+require_once '../lib/Controller.php';
 
-class UserController {
+class UserController extends Controller {
 
     public function index() {
       $userRepository = new UserRepository();
@@ -10,12 +11,15 @@ class UserController {
       $view->title = 'Benutzer';
       $view->heading = 'Benutzer';
       $view->users = $userRepository->readAll();
+      $view->user = $this->getUser();
       $view->display();
     }
 
     public function register() {
       $userRepository = new UserRepository();
+      $sessionManager = new SessionManager();
       $view = new View('user_register');
+      $view->user = $this->getUser();
       $view->title = "Register";
       $view->valid = true;
       $view->email = '';
@@ -56,6 +60,8 @@ class UserController {
             $sessionManager->signInAsId($id);
             header("Location: /?registered=true");
             die('<a href="/?registered=true">Weiter.</a>');
+          } catch (Exception $e) {
+            die('Ein Fehler ist aufgetreten.');
           }
         }
 
