@@ -99,6 +99,12 @@ class UserController extends Controller {
       $view->display();
     }
 
+    public function logout() {
+      session_destroy();
+      header("Location: /");
+      die('<a href="/">Weiter.</a>');
+    }
+
     public function create() {
         $view = new View('user_create');
         $view->title = 'Benutzer erstellen';
