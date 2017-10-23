@@ -76,6 +76,7 @@ class UserController extends Controller {
       $view->email = '';
       $view->password = '';
       $view->loginSummary = '';
+      $view->title = 'Einloggen';
 
       if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $userRepository = new userRepository();
