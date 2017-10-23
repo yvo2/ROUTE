@@ -1,2 +1,35 @@
-document.getElementById("#rt-via0").style.visibility = "hidden";
-document.getElementById(id).style.visibility = "visible";
+function focusEvent(id) {
+  if (id === 0) {
+    $("#rt-via1").css("display", "block")
+  }
+
+  if (id === 1) {
+    $("#rt-via2").css("display", "block")
+  }
+
+  if (id === 2) {
+    $("#rt-via3").css("display", "block")
+  }
+
+  if (id === 3) {
+    $("#rt-via4").css("display", "block")
+  }
+}
+
+function blurEvent(id) {
+  if (id === 0 && $("#rt-via0").val() === "") {
+    $("#rt-via1").css("display", "none")
+  }
+
+  if (id === 1 && $("#rt-via1").val() === "") {
+    $("#rt-via2").css("display", "none")
+  }
+
+  if (id === 2 && $("#rt-via2").val() === "") {
+    $("#rt-via3").css("display", "none")
+  }
+
+  if (id === 3 && $("#rt-via3").val() === "") {
+    $("#rt-via4").css("display", "none")
+  }
+}

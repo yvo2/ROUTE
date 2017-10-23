@@ -74,6 +74,10 @@
   color: white !important;
 }
 
+#rt-via1, #rt-via2, #rt-via3, #rt-via4 {
+  display: none;
+}
+
 .hello {
   margin-right: 5px;
 }
