@@ -1,7 +1,7 @@
 <section class="jumbotron text-center">
   <div class="container">
     <h1 class="jumbotron-heading">ROUTE</h1>
-    <p class="lead text-muted">Finde eine Exkursion!</p>
+    <p class="lead text-muted">Finde deine Exkursion!</p>
     <form method="post" class="rt-search">
       <label class="text-muted" for="rt-homebase">Homebase: </label><input value="<?= $homebase ?>" placeholder="z.B. Bern" class="form-control" id="rt-homebase" name="rt-homebase" type="text"><br>
       <label class="text-muted" for="rt-via">Welche Destinationen möchtest du besuchen? </label><input value="<?= $via[0] ?>" placeholder="z.B. Locarno" class="form-control" id="rt-via0" name="rt-via0" type="text"><br>
