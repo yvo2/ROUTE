@@ -9,7 +9,6 @@ class UserController extends Controller {
       $userRepository = new UserRepository();
       $view = new View('user_index');
       $view->title = 'Benutzer';
-      $view->heading = 'Benutzer';
       $view->users = $userRepository->readAll();
       $view->user = $this->getUser();
       $view->display();
@@ -53,13 +52,18 @@ class UserController extends Controller {
           $view->valid = false;
         }
 
+        if ($userRepository->existsEmail($email)) {
+          $view->emailValidationMessage = "Diese Email-Addresse ist bereits vergeben.";
+          $view->valid = false;
+        }
+
         if ($view->valid) {
           try {
             // Create user in database
             $id = $userRepository->create($email, $password);
             $sessionManager->signInAsId($id);
-            header("Location: /?registered=true");
-            die('<a href="/?registered=true">Weiter.</a>');
+            header("Location: /User/registersuccess");
+            die('<a href="/User/registersuccess">Weiter.</a>');
           } catch (Exception $e) {
             die('Ein Fehler ist aufgetreten.');
           }
@@ -74,6 +78,7 @@ class UserController extends Controller {
       $view = new View('user_login');
       $view->user = $this->getUser();
       $view->email = '';
+      $view->title = 'Anmelden';
       $view->password = '';
       $view->loginSummary = '';
 
@@ -103,5 +108,11 @@ class UserController extends Controller {
       session_destroy();
       header("Location: /");
       die('<a href="/">Weiter.</a>');
+    }
+
+    public function registersuccess() {
+      $view = new View('user_register_success');
+      $view->user = $this->getUser();
+      $view->display();
     }
 }

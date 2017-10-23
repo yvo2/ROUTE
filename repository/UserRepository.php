@@ -50,6 +50,19 @@ class UserRepository extends Repository
       return $result->num_rows != 0;
     }
 
+    public function existsEmail($email) {
+      $query = "SELECT * FROM $this->tableName WHERE email = ?";
+
+      $statement = ConnectionHandler::getConnection()->prepare($query);
+      $statement->bind_param('s', $email);
+
+      if (!$statement->execute()) {
+        throw new Exception($statement->error);
+      }
+      $result = $statement->get_result();
+      return $result->num_rows != 0;
+    }
+
     public function readByCredentials($email, $password) {
       $password = sha1($password);
 
