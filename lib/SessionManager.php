@@ -4,20 +4,25 @@ require_once '../repository/UserRepository.php';
 
 class SessionManager {
 
-    public signInAsId($id) {
+    public function signInAsId($id) {
       $_SESSION["userId"] = $id;
     }
 
-    public isSignedIn() {
+    public function isSignedIn() {
       return isset($_SESSION["userId"]);
     }
 
-    public getUser() {
+    public function getUser() {
       if (!$this->isSignedIn()) {
-        return false;
+        $user = (object) array('signedIn' => false);
+        return $user;
       }
 
-      return $userRepository->readById($_SESSION["userId"]);
+      $userRepository = new UserRepository();
+      $user = (object) $userRepository->readById($_SESSION["userId"]);
+      $user->signedIn = true;
+
+      return $user;
     }
 
 }

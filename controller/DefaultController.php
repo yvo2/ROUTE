@@ -1,12 +1,11 @@
 <?php
 
 require_once '../repository/ConnectionRepository.php';
-require_once '../repository/UserRepository.php';
+require_once '../lib/Controller.php';
 
-class DefaultController {
+class DefaultController extends Controller {
     public function index() {
         $connectionRepository = new ConnectionRepository();
-        $userRepository = new UserRepository();
 
         @$homebase = $_POST["rt-homebase"];
         $via = array();
@@ -19,7 +18,7 @@ class DefaultController {
         $view = new View('default_index');
         $view->title = 'Finden';
         $view->heading = 'ROUTE';
-        $view->user = $userRepository->readById(1);
+        $view->user = $this->getUser();
         $view->homebase = $homebase;
         $view->via = $via;
         $view->connectionResponse = $connectionRepository->getConnectionResult($homebase, $via);
