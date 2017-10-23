@@ -9,7 +9,7 @@ $config = array(
     "host"      => 'localhost:3307',
     "username"  => 'root',
     "password"  => '',
-    "database"  => 'route-db'
+    "database"  => 'routedb'
   )
 );
 
