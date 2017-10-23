@@ -38,7 +38,7 @@
 
       } else {
         ?>
-          Bitte fülle erst die erforderlichen Textfelder aus.
+          Bitte fülle die erforderlichen Textfelder aus
         <?php
       }
      ?>
