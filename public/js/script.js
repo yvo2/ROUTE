@@ -33,3 +33,27 @@ function blurEvent(id) {
     $("#rt-via4").css("display", "none")
   }
 }
+
+function clickEvent(id) {
+  if ($("#rt-via0").val() !== "") {
+    $("#rt-via0").css("display", "block")
+    $("#rt-via1").css("display", "block")
+  }
+
+  if ($("#rt-via1").val() !== "") {
+    $("#rt-via1").css("display", "block")
+    $("#rt-via2").css("display", "block")
+  }
+
+  if ($("#rt-via2").val() !== "") {
+    $("#rt-via2").css("display", "block")
+    $("#rt-via3").css("display", "block")
+  }
+
+  if ($("#rt-via3").val() !== "") {
+    $("#rt-via3").css("display", "block")
+    $("#rt-via4").css("display", "block")
+  }
+}
+
+clickEvent();

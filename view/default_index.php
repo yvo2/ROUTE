@@ -9,7 +9,7 @@
       <input value="<?= $via[2] ?>" placeholder="Weitere Destination..." class="form-control" id="rt-via2" name="rt-via2" type="text" onfocus="focusEvent(2)" onblur="blurEvent(2)"><br>
       <input value="<?= $via[3] ?>" placeholder="Weitere Destination..." class="form-control" id="rt-via3" name="rt-via3" type="text" onfocus="focusEvent(3)" onblur="blurEvent(3)"><br>
       <input value="<?= $via[4] ?>" placeholder="Weitere Destination..." class="form-control" id="rt-via4" name="rt-via4" type="text" onfocus="focusEvent(4)" onblur="blurEvent(4)"><br>
-      <input class="btn btn-primary"type="submit" value="Los gehts!">
+      <input class="btn btn-primary" type="submit" value="Los gehts!">
     </form>
   </div>
 </section>
