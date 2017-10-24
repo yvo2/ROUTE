@@ -38,7 +38,7 @@ class CommentController extends Controller {
     if (!isset($id) || empty($id)) {
       die("Keine ID gefunden.");
     }
-    $bewertung = $_POST["rt-comment"];
+    $bewertung = htmlspecialchars($_POST["rt-comment"]);
     if (!isset($bewertung) || empty($bewertung)) {
       die("Bitte Kommentar eingeben. <a href='/Comment/edit?id=$id'>Zurück</a>");
     }
