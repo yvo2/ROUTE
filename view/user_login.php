@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container formcontainer">
   <h1 class="jumbotron-heading">EINLOGGEN</h1>
   <p class="lead text-muted">Melde dich an. Noch keinen Account? <a href="/User/register"> Registrieren.</a></p>
   <form method="post" class="rt-register">
