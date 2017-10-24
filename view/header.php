@@ -16,6 +16,7 @@
       <div class="container d-flex justify-content-between">
         <a href="/" class="navbar-brand">ROUTE</a>
         <div class="form-inline my-2 my-lg-0 text-white">
+          <a href="/Exkursion" class="text-white spacer-right">Exkursion</a>
           <?php if ($user->signedIn) { ?>
             <div class="hello">Hallo,</div><a href="/User" class="text-white textmargin"><?= $user->email ?></a>
             <a href="/User/logout" class="text-white">Abmelden</a>

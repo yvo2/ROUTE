@@ -16,6 +16,10 @@
   margin-bottom: 10px;
 }
 
+.spacer-right {
+  margin-right: 20px;
+}
+
 .comment {
   border: 1px solid black;
   margin-top: 20px;
@@ -26,6 +30,10 @@
   background-color: rgb(193, 9, 0) !important;
   border-color: rgb(193, 9, 0) !important;
   margin-top: 10px;
+}
+
+.stretch {
+  width: 100%;
 }
 
 .rt-btn-margin {
@@ -51,7 +59,6 @@
 }
 
 .card {
-  float: left;
   width: 100%;
   padding: .75rem;
   margin-bottom: 2rem;
@@ -96,7 +103,7 @@
 }
 
 .textmargin {
-  margin-right: 10px;
+  margin-right: 20px;
 }
 
 .card > img {
