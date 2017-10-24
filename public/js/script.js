@@ -56,4 +56,28 @@ function clickEvent(id) {
   }
 }
 
+function emLength() {
+  if ($("#rt-email").val().length <= 5) {
+     $("#rt-email").css('border', 'solid 1px red');
+   } else {
+     $("#rt-email").css('border', 'solid 1px green');
+   }
+}
+
+function pwLength() {
+  if ($("#rt-password").val().length <= 7) {
+     $("#rt-password").css('border', 'solid 1px red');
+   } else {
+     $("#rt-password").css('border', 'solid 1px green');
+   }
+}
+
+function pwCompare() {
+  if ($("#rt-password").val() === $("#rt-password-repeat").val()) {
+    $("#rt-password-repeat").css('border', 'solid 1px green');
+  } else {
+    $("#rt-password-repeat").css('border', 'solid 1px red');
+  }
+}
+
 clickEvent();
