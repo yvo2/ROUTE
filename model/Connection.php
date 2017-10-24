@@ -60,6 +60,22 @@ class Connection {
     return substr($result, 0, -2);
   }
 
+  /**
+   * Get a link to the detail page of this connection
+   * @return string link to page
+   */
+   public function getDetailLink() {
+     $vias = urlencode($this->getVias());
+     $duration = urlencode($this->getDuration());
+     $home = urlencode($this->getFrom());
+
+     $link = "/Route/detail";
+     $params = "?route=$home:$vias";
+     $params .= "&duration=$duration";
+
+     return $link . $params;
+   }
+
 }
 
  ?>

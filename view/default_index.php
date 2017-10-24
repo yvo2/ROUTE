@@ -27,11 +27,13 @@
         } else {
           foreach ($connectionResponse->getConnections() as $connection) {
             ?>
-            <div class="card">
-            <p class="cardtext"><?= $connection->getDurationFormatted() ?><br></p>
-            <p class="cardtext">Homebase: <?= $connection->from ?><br></p>
-            <p class="cardtext">Umsteigeorte: <?= $connection->getVias() ?></p>
-            </div>
+            <a href="<?= $connection->getDetailLink() ?>">
+              <div class="card">
+              <p class="cardtext"><?= $connection->getDurationFormatted() ?><br></p>
+              <p class="cardtext">Homebase: <?= $connection->from ?><br></p>
+              <p class="cardtext">Umsteigeorte: <?= $connection->getVias() ?></p>
+              </div>
+            </a>
 
 
             <?php

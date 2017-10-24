@@ -16,9 +16,16 @@
   margin-bottom: 10px;
 }
 
+.comment {
+  border: 1px solid black;
+  margin-top: 20px;
+  padding: 10px;
+}
+
 .rt-btn {
   background-color: rgb(193, 9, 0) !important;
   border-color: rgb(193, 9, 0) !important;
+  margin-top: 10px;
 }
 
 .jumbotron p:last-child {
@@ -45,6 +52,8 @@
   padding: .75rem;
   margin-bottom: 2rem;
   border: 0;
+  cursor: pointer;
+  color: #333;
 }
 
 .cardtext {
