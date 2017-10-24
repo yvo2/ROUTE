@@ -1,6 +1,6 @@
-<div class="container">
+<div class="container formcontainer">
   <h1 class="jumbotron-heading">REGISTRIEREN</h1>
-  <p class="lead text-muted">Registriere dich und geniesse Vorteile wie die Kommentarfunktion!</p>
+  <p class="lead text-muted">Registriere dich und geniesse Vorteile wie die Kommentarfunktion! Bereits einen Account? <a href="/User/login">Anmelden.</a></p>
   <form method="post" class="rt-register">
     <label class="text-muted" for="rt-email">Email: </label><input value="<?= $email ?>" placeholder="Email-Adresse" class="form-control" id="rt-email" name="rt-email" type="email" onchange="emLength()"><br>
     <div class="rt-validation" id="validation-email"><?= $emailValidationMessage ?></div>

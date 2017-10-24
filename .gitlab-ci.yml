@@ -1,0 +1,13 @@
+stages:
+  - deploy
+
+deploy_prod:
+  stage: deploy
+  script:
+    - echo "Deploy to production server"
+  environment:
+    name: production
+    url: https://route.larsbaertschi.ch
+  when: manual
+  only:
+  - master
