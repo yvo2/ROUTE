@@ -57,26 +57,35 @@ function clickEvent(id) {
 }
 
 function emLength() {
-  if ($("#rt-email").val().length <= 5) {
+  if ($("#rt-email").val().length <= 5 || !($("#rt-email").val().includes("@") && $("#rt-email").val().includes("."))) {
      $("#rt-email").css('border', 'solid 1px red');
+     $("#validation-email").text("Bitte eine valide Email-Addresse eingeben.")
+     $("#validation-email2").text("Bitte eine valide Email-Addresse eingeben.")
    } else {
-     $("#rt-email").css('border', 'solid 1px green');
+     $("#rt-email").css('border', 'solid 1px rgba(0,0,0,0.15)');
+     $("#validation-email").text("")
+     $("#validation-email2").text("")
    }
 }
 
 function pwLength() {
   if ($("#rt-password").val().length <= 7) {
      $("#rt-password").css('border', 'solid 1px red');
+     $("#validation-password").text("Bitte Passwort eingeben, welches mindestens 8 Zeichen lang ist.")
    } else {
      $("#rt-password").css('border', 'solid 1px green');
+     $("#validation-password").text("")
    }
 }
 
 function pwCompare() {
   if ($("#rt-password").val() === $("#rt-password-repeat").val()) {
     $("#rt-password-repeat").css('border', 'solid 1px green');
+    $("#validation-password-repeat").text("")
   } else {
     $("#rt-password-repeat").css('border', 'solid 1px red');
+    $("#validation-password-repeat").text("Bitte das Passwort korrekt wiederholen.")
+
   }
 }
 
