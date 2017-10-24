@@ -35,7 +35,7 @@ class CommentRepository extends Repository
     }
 
     public function getByRoute($route) {
-      $query = "SELECT bewertung, email FROM $this->tableName LEFT JOIN user ON user.id = $this->tableName.userId WHERE $this->tableName.route = ?";
+      $query = "SELECT bewertung, $this->tableName.id, email FROM $this->tableName LEFT JOIN user ON user.id = $this->tableName.userId WHERE $this->tableName.route = ?";
       $statement = ConnectionHandler::getConnection()->prepare($query);
       $statement->bind_param('s', $route);
       if (!$statement->execute()) {
@@ -43,5 +43,25 @@ class CommentRepository extends Repository
       }
       $result = $statement->get_result();
       return $result;
+    }
+
+    public function update($id, $comment) {
+      $query = "UPDATE $this->tableName SET bewertung = ? WHERE id = ?";
+      $statement = ConnectionHandler::getConnection()->prepare($query);
+      $statement->bind_param('ss', $comment, $id);
+      if (!$statement->execute()) {
+          throw new Exception($statement->error);
+      }
+      return true;
+    }
+
+    public function delete($id) {
+      $query = "DELETE FROM $this->tableName WHERE id = ?";
+      $statement = ConnectionHandler::getConnection()->prepare($query);
+      $statement->bind_param('s', $id);
+      if (!$statement->execute()) {
+          throw new Exception($statement->error);
+      }
+      return true;
     }
 }

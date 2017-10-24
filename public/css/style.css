@@ -28,6 +28,10 @@
   margin-top: 10px;
 }
 
+.rt-btn-margin {
+  margin-top: 10px;
+}
+
 .jumbotron p:last-child {
   margin-bottom: 0;
 }

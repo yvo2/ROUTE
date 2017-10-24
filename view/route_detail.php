@@ -31,6 +31,11 @@
 			<div class="comment">
 				<?= $row->email ?> schrieb:<br><br>
 				<?= str_replace("\n", "<br>", $row->bewertung) ?>
+				<?php if($user->email == $row->email) {
+					?>
+						<hr><a href="/Comment/edit?id=<?= $row->id ?>">Bearbeiten</a> | <a href="/Comment/delete?id=<?= $row->id ?>">Löschen</a>
+					<?php
+				} ?>
 			</div>
 			<?php
 		}
