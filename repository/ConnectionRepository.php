@@ -19,6 +19,7 @@ class ConnectionRepository {
    */
   public function getConnectionResult($from, $vias) {
     global $config;
+    $from = urlencode($from);
     $requesturl = $config["endpoint_url"].'?from='.$from.'&to='.$from.$this->getViaStrings($vias);
     @$connections = file_get_contents($requesturl);
     if ($connections == null) {
@@ -30,6 +31,7 @@ class ConnectionRepository {
 
   public function getViaStrings($vias) {
     $vias = array_filter($vias);
+    $vias = array_map("urlencode", $vias);
     $result = "&via[]=";
     $result .= implode('&via[]=', $vias);
     return $result;
