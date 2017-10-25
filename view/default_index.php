@@ -31,7 +31,9 @@
               <div class="card">
                 <p class="cardtext"><?= $connection->getDurationFormatted() ?><br></p>
                 <p class="cardtext">Homebase: <?= $connection->from ?><br></p>
+                <p class="cardtext">Abfahrtszeit: <?= $connection->departure ?></p>
                 <p class="cardtext">Umsteigeorte: <?= $connection->getVias() ?></p>
+                <p class="cardtext">Ankunftsszeit: <?= $connection->arrival ?></p>
               </div>
             </a>
             <?php

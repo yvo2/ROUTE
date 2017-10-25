@@ -4,6 +4,8 @@ class Connection {
 
   public $from;
   public $to;
+  public $fromTime;
+  public $toTime;
   public $duration;
   public $arrival;
   public $departure;
