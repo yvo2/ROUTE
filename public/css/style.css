@@ -129,6 +129,10 @@
   text-align: left;
 }
 
+.no-hover:hover {
+  text-decoration: none !important;
+}
+
 footer {
   padding-top: 3rem;
   padding-bottom: 3rem;

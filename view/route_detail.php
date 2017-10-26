@@ -1,3 +1,4 @@
+<?php require_once "../model/Connection.php"; ?>
 <article class="hreview open special">
 	<table class="table">
     <tr>
@@ -12,7 +13,7 @@
 		<?php } ?>
     <tr>
       <th>Dauer</th>
-      <td><?= $duration ?>
+      <td><?= Connection::getDurationFormatted($duration) ?>
     </tr>
 	</table>
   <?php if ($user->signedIn) { ?>
