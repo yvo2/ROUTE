@@ -16,6 +16,15 @@
   margin-bottom: 10px;
 }
 
+.jumbotron {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+#mainbutton {
+  margin-top: 0;
+}
+
 #createerrortext, #editerrortext {
   margin-top: 20px;
 }
