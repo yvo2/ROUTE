@@ -120,5 +120,3 @@ function onSearchButtonMouseOut() {
     $("#mainbutton").children().fadeIn(200);
   });
 }
-
-clickEvent();
