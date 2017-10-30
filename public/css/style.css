@@ -8,8 +8,11 @@
   padding-bottom: 4rem;
   margin-bottom: 0;
   background-color: #fff;
-  width: 950px;
-  margin: 0 auto;
+}
+
+.searchcontainer {
+    width: 950px;
+      margin: 0 auto;
 }
 
 .rt-validation {
@@ -94,6 +97,10 @@
 
 .jumbotron p:last-child {
   margin-bottom: 0;
+}
+
+.no-limits {
+  max-width: none;
 }
 
 .jumbotron-heading {
@@ -185,12 +192,8 @@ footer p {
   margin-bottom: .25rem;
 }
 
-.container {
-  max-width: none;
-}
-
 @media screen and (max-width: 980px) {
-  .jumbotron {
+  .searchcontainer {
     width: 100%;
   }
 
