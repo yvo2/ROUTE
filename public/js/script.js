@@ -1,59 +1,67 @@
 function focusEvent(id) {
   if (id === 0) {
-    $("#rt-via1").css("display", "block")
+    $("#rt-via1").addClass("via-show")
+    $("#rt-via1").removeClass("via-hidden")
   }
 
   if (id === 1) {
-    $("#rt-via2").css("display", "block")
+    $("#rt-via2").addClass("via-show")
+    $("#rt-via2").removeClass("via-hidden")
   }
 
   if (id === 2) {
-    $("#rt-via3").css("display", "block")
+    $("#rt-via3").addClass("via-show")
+    $("#rt-via3").removeClass("via-hidden")
   }
 
   if (id === 3) {
-    $("#rt-via4").css("display", "block")
+    $("#rt-via4").addClass("via-show")
+    $("#rt-via4").removeClass("via-hidden")
   }
 }
 
 function blurEvent(id) {
   if (id === 0 && $("#rt-via0").val() === "") {
-    $("#rt-via1").css("display", "none")
+    $("#rt-via1").addClass("via-hidden")
+    $("#rt-via1").removeClass("via-show")
   }
 
   if (id === 1 && $("#rt-via1").val() === "") {
-    $("#rt-via2").css("display", "none")
+    $("#rt-via2").addClass("via-hidden")
+    $("#rt-via2").removeClass("via-show")
   }
 
   if (id === 2 && $("#rt-via2").val() === "") {
-    $("#rt-via3").css("display", "none")
+    $("#rt-via3").addClass("via-hidden")
+    $("#rt-via3").removeClass("via-show")
   }
 
   if (id === 3 && $("#rt-via3").val() === "") {
-    $("#rt-via4").css("display", "none")
+    $("#rt-via4").addClass("via-hidden")
+    $("#rt-via4").removeClass("via-show")
   }
 }
 
 $(document).ready(function() {
   if ($("#rt-via0").val() !== "") {
-    $("#rt-via0").css("display", "block")
-    $("#rt-via1").css("display", "block")
+    $("#rt-via0").addClass("via-show")
+    $("#rt-via1").addClass("via-show")
   }
 
   if ($("#rt-via1").val() !== "") {
-    $("#rt-via1").css("display", "block")
-    $("#rt-via2").css("display", "block")
+    $("#rt-via1").addClass("via-show")
+    $("#rt-via2").addClass("via-show")
   }
 
   if ($("#rt-via2").val() !== "") {
-    $("#rt-via2").css("display", "block")
-    $("#rt-via3").css("display", "block")
+    $("#rt-via2").addClass("via-show")
+    $("#rt-via3").addClass("via-show")
   }
 
   if ($("#rt-via3").val() !== "") {
-    $("#rt-via3").css("display", "block")
-    $("#rt-via4").css("display", "block")
-      }
+    $("#rt-via3").addClass("via-show")
+    $("#rt-via4").addClass("via-show")
+  }
 })
 
 function emLength() {

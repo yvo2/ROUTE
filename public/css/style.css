@@ -153,8 +153,19 @@
   color: white !important;
 }
 
-#rt-via1, #rt-via2, #rt-via3, #rt-via4 {
-  display: none;
+.additional-via {
+  transition: opacity 0.4s, height 1.5s, margin-bottom 1s, padding 1s;
+}
+
+.via-hidden {
+  opacity: 0;
+  height: 0;
+  margin-bottom: 0;
+  padding: 0;
+}
+
+.via-show {
+  opacity: 1;
 }
 
 .footercontainer {
