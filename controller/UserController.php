@@ -114,6 +114,7 @@ class UserController extends Controller {
     public function registersuccess() {
       $view = new View('user_register_success');
       $view->user = $this->getUser();
+      $view->title = 'Erfolgreich registriert';
       $view->display();
     }
 }

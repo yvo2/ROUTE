@@ -11,7 +11,7 @@ class ExkursionController extends Controller {
     $view = new View('exkursion_index');
     $view->title = "Exkursion";
     $view->user = $this->getUser();
-    $view->exkursionen = $commentRepository->readAll();
+    $view->exkursionen = $commentRepository->getAll();
     $view->display();
   }
 }
