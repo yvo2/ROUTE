@@ -23,6 +23,7 @@
 
 #mainbutton {
   margin-top: 0;
+  min-height: 38px;
 }
 
 #createerrortext, #editerrortext {
