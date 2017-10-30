@@ -26,7 +26,7 @@ class UserRepository extends Repository
      * @throws Exception falls das Ausführen des Statements fehlschlägt
      */
     public function create($email, $password) {
-        $password = sha1($password);
+        $password = hash ("sha256" , $password);
         $query = "INSERT INTO $this->tableName (email, password) VALUES (?, ?)";
         $statement = ConnectionHandler::getConnection()->prepare($query);
         $statement->bind_param('ss', $email, $password);
@@ -37,7 +37,7 @@ class UserRepository extends Repository
     }
 
     public function existsUser($email, $password) {
-      $password = sha1($password);
+      $password = hash ("sha256" , $password);
 
       $query = "SELECT * FROM $this->tableName WHERE email = ? AND password = ?";
       $statement = ConnectionHandler::getConnection()->prepare($query);
@@ -64,7 +64,7 @@ class UserRepository extends Repository
     }
 
     public function readByCredentials($email, $password) {
-      $password = sha1($password);
+      $password = hash ("sha256" , $password);
 
       $query = "SELECT * FROM $this->tableName WHERE email = ? AND password = ?";
       $statement = ConnectionHandler::getConnection()->prepare($query);
