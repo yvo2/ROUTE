@@ -120,6 +120,17 @@
   display: none;
 }
 
+.footercontainer {
+  position: relative;
+}
+
+.footercontent {
+  width: 950px;
+  position: relative;
+  margin: 0 auto;
+  padding: 0 8px; 
+}
+
 .hello {
   margin-right: 5px;
 }
@@ -154,6 +165,10 @@ footer p {
 
 @media screen and (max-width: 980px) {
   .jumbotron {
+    width: 100%;
+  }
+
+  .footercontent {
     width: 100%;
   }
 }
