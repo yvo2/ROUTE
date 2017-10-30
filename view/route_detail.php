@@ -37,7 +37,7 @@
 				while ($row = $comments->fetch_object()) {
 					?>
 					<div class="comment">
-						<?= $row->email ?> schrieb:<br><br>
+						<strong><?= $row->email ?> schrieb:<br><br></strong>
 						<?= str_replace("\n", "<br>", $row->bewertung) ?>
 						<?php if($user->signedIn && $user->email == $row->email) {
 							?>
