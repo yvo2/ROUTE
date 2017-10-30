@@ -1,5 +1,5 @@
-<section class="jumbotron text-center">
-  <div class="container">
+<section class="jumbotron text-center searchcontainer">
+  <div class="container no-limits">
     <h1 class="jumbotron-heading">ROUTE</h1>
     <p class="lead text-muted">Finde deine Exkursion!</p>
     <form method="post" class="rt-search">

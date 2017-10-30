@@ -8,8 +8,11 @@
   padding-bottom: 4rem;
   margin-bottom: 0;
   background-color: #fff;
-  width: 950px;
-  margin: 0 auto;
+}
+
+.searchcontainer {
+    width: 950px;
+      margin: 0 auto;
 }
 
 .rt-validation {
@@ -71,6 +74,10 @@
   margin-bottom: 0;
 }
 
+.no-limits {
+  max-width: none;
+}
+
 .jumbotron-heading {
   font-weight: 300;
 }
@@ -129,7 +136,7 @@
   width: 950px;
   position: relative;
   margin: 0 auto;
-  padding: 0 8px; 
+  padding: 0 8px;
 }
 
 .hello {
@@ -160,12 +167,8 @@ footer p {
   margin-bottom: .25rem;
 }
 
-.container {
-  max-width: none;
-}
-
 @media screen and (max-width: 980px) {
-  .jumbotron {
+  .searchcontainer {
     width: 100%;
   }
 
