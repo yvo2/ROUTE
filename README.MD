@@ -4,4 +4,7 @@
 
 ### [Powered by opendata.ch](https://opendata.ch)
 
-##### (Für üK-Leiter: Bewertungen bitte basierend auf dem master-Branch andere Branches sond für zukünftige Entwicklung und für die Bewertung irrelevant)
+##### (Für üK-Leiter: Bewertungen bitte basierend auf dem master-Branch andere Branches sind für die Bewertung irrelevant)
+
+##### By Yvo Hofer and Lars Bärtschi
+
