@@ -9,7 +9,7 @@
       <input value="<?= $via[2] ?>" placeholder="Weitere Destination..." class="form-control viainput" id="rt-via2" name="rt-via2" type="text" onfocus="focusEvent(2)" onblur="blurEvent(2)">
       <input value="<?= $via[3] ?>" placeholder="Weitere Destination..." class="form-control viainput" id="rt-via3" name="rt-via3" type="text" onfocus="focusEvent(3)" onblur="blurEvent(3)">
       <input value="<?= $via[4] ?>" placeholder="Weitere Destination..." class="form-control viainput" id="rt-via4" name="rt-via4" type="text" onfocus="focusEvent(4)" onblur="blurEvent(4)">
-      <button class="btn btn-primary rt-btn stretch" id="mainbutton" type="submit" onmouseover="onSearchButtonMouseOver()" onmouseout="onSearchButtonMouseOut()"><i class="fa fa-subway" aria-hidden="true"></i></button>
+      <button class="btn btn-primary rt-btn stretch" id="mainbutton" type="submit"><i class="fa fa-subway default" aria-hidden="true"></i><span class="hover">Los geht's!</span></button>
     </form>
   </div>
 </section>
