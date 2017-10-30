@@ -5,9 +5,13 @@ deploy_prod:
   stage: deploy
   script:
     - echo "Deploy to production server"
+    - rm -rf /home/lars/route/*
+    - cp -av * /home/lars/route
+    - rm /home/lars/route/config/config.php
+    - cp /home/lars/routeConfig.php /home/lars/route/config/config.php
   environment:
     name: production
-    url: https://route.larsbaertschi.ch
+    url: https://routeconnect.tk
   when: manual
   only:
   - master

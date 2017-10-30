@@ -5,6 +5,7 @@
   <title><?= $title ?> - ROUTE</title>
   <link href="/css/bootstrap.min.css" rel="stylesheet">
   <link href="/css/style.css" rel="stylesheet">
+  <link href="/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
 
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">

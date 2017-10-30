@@ -4,6 +4,8 @@ class Connection {
 
   public $from;
   public $to;
+  public $fromTime;
+  public $toTime;
   public $duration;
   public $arrival;
   public $departure;
@@ -21,6 +23,16 @@ class Connection {
     }
   }
 
+  public function getArrivalFormatted() {
+    $dt = new DateTime($this->arrival);
+    return $dt->format('H:i');
+  }
+
+  public function getDepartureFormatted() {
+    $dt = new DateTime($this->departure);
+    return $dt->format('H:i');
+  }
+
   public function getFrom() {
     return $this->from;
   }
@@ -33,8 +45,12 @@ class Connection {
     return $this->duration;
   }
 
-  public function getDurationFormatted() {
-    $timeString = explode('d', $this->getDuration())[1];
+  public function getConnectionDuration() {
+    return Connection::getDurationFormatted($this->getDuration());
+  }
+
+  public static function getDurationFormatted($duration) {
+    $timeString = explode('d', $duration)[1];
     $times = explode(':', $timeString);
     $hours = intval($times[0]);
     $minutes = intval($times[1]);

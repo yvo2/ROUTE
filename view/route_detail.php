@@ -1,3 +1,4 @@
+<?php require_once "../model/Connection.php"; ?>
 <article class="hreview open special">
 	<table class="table">
     <tr>
@@ -12,16 +13,20 @@
 		<?php } ?>
     <tr>
       <th>Dauer</th>
-      <td><?= $duration ?>
+      <td><?= Connection::getDurationFormatted($duration) ?>
     </tr>
 	</table>
   <?php if ($user->signedIn) { ?>
     <h5>Erfasse einen Kommentar:</h5>
     <form action="/Route/create" method="post">
-      <textarea class="form-control" name="rt-comment" rows="8"></textarea>
+      <textarea class="form-control" name="rt-comment" rows="8" id="createtext" onchange="cmdcreateCheck()"></textarea>
       <input type="hidden" value="<?= $route ?>" name="rt-route">
-      <input class="btn btn-primary rt-btn" type="submit">
+			<div class="rt-validation" id="createerrortext">
+			<?= $validationerror ?>
+		</div>
+      <input class="btn btn-primary rt-btn" type="submit" id="buttonlower">
     </form>
+
   <?php } else { ?>
     <h5><a href="/User/login">Anmelden</a>, um einen Kommentar zu erfassen.</h5>
   <?php }

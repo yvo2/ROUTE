@@ -16,6 +16,23 @@
   margin-bottom: 10px;
 }
 
+.jumbotron {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+#mainbutton {
+  margin-top: 0;
+}
+
+#createerrortext, #editerrortext {
+  margin-top: 20px;
+}
+
+#buttonlower {
+  margin-bottom: 20px;
+}
+
 .spacer-right {
   margin-right: 20px;
 }
@@ -27,8 +44,10 @@
 }
 
 .comment {
-  border: 1px solid black;
+  border: 1px solid rgba(0,0,0,0.15);
   margin-top: 20px;
+  background-color: white;
+  color: #868e96;
   padding: 10px;
 }
 
@@ -117,6 +136,10 @@
   width: 100%;
   margin-top: 5px;
   text-align: left;
+}
+
+.no-hover:hover {
+  text-decoration: none !important;
 }
 
 footer {

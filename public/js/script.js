@@ -89,4 +89,20 @@ function pwCompare() {
   }
 }
 
+function cmdcreateCheck() {
+  if ($("#createtext").val().length <= 3) {
+    $("#createtext").css('border', 'solid 1px red');
+  } else {
+    $("#createtext").css('border', 'solid 1px green');
+  }
+}
+
+function cmdeditCheck() {
+  if ($("#edittext").val().length <= 3) {
+    $("#edittext").css('border', 'solid 1px red');
+  } else {
+    $("#edittext").css('border', 'solid 1px green');
+  }
+}
+
 clickEvent();

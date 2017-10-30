@@ -5,9 +5,53 @@ require_once '../lib/Controller.php';
 class CommentController extends Controller {
 
   public function edit() {
-    @$id = $_GET["id"];
-    if (!isset($id) || empty($id)) {
-      die("Keine ID gefunden.");
+    if (!$this->getUser()->signedIn) {
+      die('Please <a href="/User/login">Sign in</a>');
+    }
+
+    $view = new View('route_edit');
+    $view->valid = true;
+    $view->user = $this->getUser();
+    $view->title = "Bearbeiten";
+    $view->commentValidationError = "";
+    $id = "";
+
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+      @$id = $_POST["rt-id"];
+      if (!isset($id) || empty($id)) {
+        die("Keine ID gefunden.");
+      }
+
+      $commentRepository = new CommentRepository();
+      $bewertung = htmlspecialchars($_POST["rt-comment"]);
+      if (!isset($bewertung) || empty($bewertung)) {
+        $view->commentValidationError = "Bitte gib einen Kommentar ein.";
+        $view->valid = false;
+      }
+
+      if (strlen($bewertung) <= 3) {
+        $view->commentValidationError = "Bitte gib einen Kommentar ein, der länger als 3 Zeichen ist.";
+        $view->valid = false;
+      }
+
+      $comment = $commentRepository->readById($id);
+
+      if ($this->getUser()->id != $comment->userId) {
+        die("Lacking permission. <a href='/'>Zurück</a>");
+      }
+
+      if ($view->valid) {
+        $commentRepository->update($id, $bewertung);
+        header("Location: /Route/detail?route=$comment->route");
+        die();
+      }
+
+    } else {
+
+      @$id = $_GET["id"];
+      if (!isset($id) || empty($id)) {
+        die("Keine ID gefunden.");
+      }
     }
 
     $commentRepository = new CommentRepository();
@@ -20,38 +64,8 @@ class CommentController extends Controller {
     if ($this->getUser()->id != $comment->userId) {
       die('Lacking permission. <a href="/Exkursion">Back</a>');
     }
-
-    $view = new View('route_edit');
     $view->comment = $comment;
-    $view->user = $this->getUser();
-    $view->title = "Bearbeiten";
     $view->display();
-  }
-
-  public function doEdit() {
-    if (!$this->getUser()->signedIn) {
-      die('Please <a href="/User/login">Sign in</a>');
-    }
-
-    $commentRepository = new CommentRepository();
-    @$id = $_POST["rt-id"];
-    if (!isset($id) || empty($id)) {
-      die("Keine ID gefunden.");
-    }
-    $bewertung = htmlspecialchars($_POST["rt-comment"]);
-    if (!isset($bewertung) || empty($bewertung)) {
-      die("Bitte Kommentar eingeben. <a href='/Comment/edit?id=$id'>Zurück</a>");
-    }
-
-    $comment = $commentRepository->readById($id);
-
-    if ($this->getUser()->id != $comment->userId) {
-      die("Lacking permission. <a href='/'>Zurück</a>");
-    }
-
-    $commentRepository->update($id, $bewertung);
-
-    header("Location: /Route/detail?route=$comment->route");
   }
 
   public function delete() {

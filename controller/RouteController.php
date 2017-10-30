@@ -20,6 +20,11 @@ class RouteController extends Controller {
     $view->duration = $duration;
     $view->homebase = $home;
     $view->route = $route;
+    $view->validationerror = "";
+
+    if (isset($_GET["valError"])) {
+      $view->validationerror = $_GET["valError"];
+    }
 
     $view->comments = $commentRepository->getByRoute(urldecode($route));
 
@@ -34,6 +39,14 @@ class RouteController extends Controller {
 
     @$comment = htmlspecialchars($_POST["rt-comment"]);
     @$route = htmlspecialchars($_POST["rt-route"]);
+
+    if (strlen($comment) <= 3) {
+      $_GET["route"] = urldecode($route);
+      $_GET["valError"] = "Bitte gib einen Kommentar ein, der länger als 3 Zeichen ist.";
+      $this->detail();
+      die();
+    }
+
     $commentRepository = new CommentRepository();
     $commentRepository->create(urldecode($route), $comment, $this->getUser()->id);
 
