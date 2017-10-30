@@ -30,8 +30,33 @@
 }
 
 #mainbutton {
-  margin-top: 0;
   min-height: 38px;
+}
+
+#mainbutton .hover {
+  height: 0;
+  display: block;
+  overflow: hidden;
+  transition: opacity 0.5s;
+  opacity: 0;
+}
+
+#mainbutton .default {
+  height: 100%;
+  display: block;
+  overflow: hidden;
+  transition: opacity 0.5s;
+  opacity: 1;
+}
+
+#mainbutton:hover .hover {
+  height: 100%;
+  opacity: 1
+}
+
+#mainbutton:hover .default {
+  height: 0;
+  opacity: 0;
 }
 
 #createerrortext, #editerrortext {

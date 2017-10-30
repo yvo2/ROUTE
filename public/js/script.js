@@ -104,21 +104,3 @@ function cmdeditCheck() {
     $("#edittext").css('border', 'solid 1px green');
   }
 }
-
-function onSearchButtonMouseOver() {
-  /* $("#mainbutton").children().fadeOut(100, function() {
-    $("#mainbutton").html("<span>Los geht's!</span>");
-    $("#mainbutton").children().hide();
-    $("#mainbutton").children().fadeIn(100);
-  }); */
-  $("#mainbutton").html("<span>Los geht's!</span>");
-}
-
-function onSearchButtonMouseOut() {
-  /* $("#mainbutton").children().fadeOut(100, function() {
-    $("#mainbutton").html('<i class="fa fa-subway" aria-hidden="true"></i>');
-    $("#mainbutton").children().hide();
-    $("#mainbutton").children().fadeIn(100);
-  }); */
-  $("#mainbutton").html('<i class="fa fa-subway" aria-hidden="true"></i>');
-}
