@@ -45,22 +45,30 @@ function blurEvent(id) {
 $(document).ready(function() {
   if ($("#rt-via0").val() !== "") {
     $("#rt-via0").addClass("via-show")
+    $("#rt-via0").removeClass("via-hidden")
     $("#rt-via1").addClass("via-show")
+    $("#rt-via1").removeClass("via-hidden")
   }
 
   if ($("#rt-via1").val() !== "") {
     $("#rt-via1").addClass("via-show")
+    $("#rt-via1").removeClass("via-hidden")
     $("#rt-via2").addClass("via-show")
+    $("#rt-via2").removeClass("via-hidden")
   }
 
   if ($("#rt-via2").val() !== "") {
     $("#rt-via2").addClass("via-show")
+    $("#rt-via2").removeClass("via-hidden")
     $("#rt-via3").addClass("via-show")
+    $("#rt-via3").removeClass("via-hidden")
   }
 
   if ($("#rt-via3").val() !== "") {
     $("#rt-via3").addClass("via-show")
+    $("#rt-via3").removeClass("via-hidden")
     $("#rt-via4").addClass("via-show")
+    $("#rt-via4").removeClass("via-hidden")
   }
 })
 

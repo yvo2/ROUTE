@@ -76,6 +76,21 @@ class Connection {
     return substr($result, 0, -2);
   }
 
+public function getViasFormatted() {
+  $result = "";
+  $arrow = ' <i class="fa fa-arrow-right" aria-hidden="true"></i> ';
+
+  //$trainChanges = array_pop($this->sections);
+  $trainChanges = $this->sections;
+  unset($trainChanges[count($trainChanges)-1]);
+
+  foreach ($trainChanges as $section) {
+    $result .= $section->arrival->station->name . $arrow;
+  }
+
+  return substr($result, 0, -strlen($arrow));
+}
+
   /**
    * Get a link to the detail page of this connection
    * @return string link to page
