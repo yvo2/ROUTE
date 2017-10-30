@@ -8,6 +8,7 @@ deploy_prod:
     - rm -rf /home/lars/route/*
     - cp -av * /home/lars/route
     - cp /home/lars/routeConfig.php /home/lars/route/config/config.php
+    - sed -i -e "s/%now%/$(date)/g" /tmp/file.txt
   environment:
     name: production
     url: https://routeconnect.tk
