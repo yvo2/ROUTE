@@ -1,13 +1,15 @@
-.navbar {
+  .navbar {
   margin-bottom: 0;
   background-color: rgb(193, 9, 0);
 }
 
 .jumbotron {
-  padding-top: 6rem;
-  padding-bottom: 6rem;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
   margin-bottom: 0;
   background-color: #fff;
+  width: 950px;
+  margin: 0 auto;
 }
 
 .rt-validation {
@@ -16,9 +18,8 @@
   margin-bottom: 10px;
 }
 
-.jumbotron {
-  padding-top: 4rem;
-  padding-bottom: 4rem;
+.viainput {
+  margin-bottom: 20px;
 }
 
 #mainbutton {
@@ -71,10 +72,6 @@
 
 .jumbotron-heading {
   font-weight: 300;
-}
-
-.jumbotron .container {
-  max-width: 40rem;
 }
 
 .album {
@@ -149,4 +146,14 @@ footer {
 
 footer p {
   margin-bottom: .25rem;
+}
+
+.container {
+  max-width: none;
+}
+
+@media screen and (max-width: 980px) {
+  .jumbotron {
+    width: 100%;
+  }
 }
