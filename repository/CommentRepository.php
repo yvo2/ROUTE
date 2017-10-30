@@ -34,6 +34,24 @@ class CommentRepository extends Repository
         return $statement->insert_id;
     }
 
+    public function getAll() {
+      $query = "SELECT * FROM $this->tableName GROUP BY $this->tableName.route";
+      $statement = ConnectionHandler::getConnection()->prepare($query);
+      if (!$statement->execute()) {
+          throw new Exception($statement->error);
+      }
+      $result = $statement->get_result();
+      if (!$result) {
+          throw new Exception($statement->error);
+      }
+      // Datensätze aus dem Resultat holen und in das Array $rows speichern
+      $rows = array();
+      while ($row = $result->fetch_object()) {
+          $rows[] = $row;
+      }
+      return $rows;
+    }
+
     public function getByRoute($route) {
       $query = "SELECT bewertung, $this->tableName.id, email FROM $this->tableName LEFT JOIN user ON user.id = $this->tableName.userId WHERE $this->tableName.route = ?";
       $statement = ConnectionHandler::getConnection()->prepare($query);
