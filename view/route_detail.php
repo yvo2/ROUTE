@@ -5,16 +5,17 @@
       <th>Home</th>
       <td><?= $homebase ?>
     </tr>
-		<?php if (isset($duration)) { ?>
+		<tr>
+			<th>Via</th>
+			<td><?= $via ?>
+		</tr>
+		<?php if (strlen($duration) != 0) { ?>
 			<tr>
-				<th>Via</th>
-				<td><?= $via ?>
+				<th>Dauer</th>
+				<td><?= Connection::getDurationFormatted($duration) ?>
 			</tr>
 		<?php } ?>
-    <tr>
-      <th>Dauer</th>
-      <td><?= Connection::getDurationFormatted($duration) ?>
-    </tr>
+
 	</table>
   <?php if ($user->signedIn) { ?>
     <h5>Erfasse einen Kommentar:</h5>
@@ -28,7 +29,7 @@
     </form>
 
   <?php } else { ?>
-    <h5><a href="/User/login">Anmelden</a>, um einen Kommentar zu erfassen.</h5>
+    <h5 class="signoninfo"><a href="/User/login">Anmelden</a>, um einen Kommentar zu erfassen.</h5>
   <?php }
 
 		while ($row = $comments->fetch_object()) {

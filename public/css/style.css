@@ -3,6 +3,10 @@
   background-color: rgb(193, 9, 0);
 }
 
+.signoninfo {
+  padding-left: .75rem;
+}
+
 .jumbotron {
   padding-top: 4rem;
   padding-bottom: 4rem;
