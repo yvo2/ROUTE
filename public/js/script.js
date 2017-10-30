@@ -34,7 +34,7 @@ function blurEvent(id) {
   }
 }
 
-function clickEvent(id) {
+$(document).ready(function() {
   if ($("#rt-via0").val() !== "") {
     $("#rt-via0").css("display", "block")
     $("#rt-via1").css("display", "block")
@@ -53,8 +53,8 @@ function clickEvent(id) {
   if ($("#rt-via3").val() !== "") {
     $("#rt-via3").css("display", "block")
     $("#rt-via4").css("display", "block")
-  }
-}
+      }
+})
 
 function emLength() {
   if ($("#rt-email").val().length <= 5 || !($("#rt-email").val().includes("@") && $("#rt-email").val().includes("."))) {
