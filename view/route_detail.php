@@ -35,6 +35,13 @@
 						<td><?= $platform ?>
 					</tr>
 				<?php } ?>
+        <?php if (strlen($arrivalVia) != 0 && strlen($departureVia) != 0) { ?>
+          <tr>
+            <th>Umstiegszeiten</th>
+            <td><?= $arrivalVia . " / " . $departureVia ?>
+          </tr>
+        <?php } ?>
+
 
 			</table>
 		  <?php if ($user->signedIn) { ?>

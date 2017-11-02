@@ -21,6 +21,8 @@ class Connection {
     $this->departure = $connection->from->departure;
     $this->platformFrom = $connection->sections[0]->departure->platform;
     $this->platformTo = $connection->sections[count($connection->sections)-1]->arrival->platform;
+    $this->arrivalVia = $connection->sections[0]->arrival->arrival;
+    $this->departureVia = $connection->sections[count($connection->sections)-1]->departure->departure;
 
     foreach ($connection->sections as $section) {
       $this->sections[] = $section;
@@ -118,6 +120,17 @@ public function getPlatformVia() {
   return $result;
 }
 
+public function getArrivalViaFormatted() {
+  $dt = new DateTime($this->arrivalVia);
+  return $dt->format('H:i');
+
+}
+
+public function getDepartureViaFormatted() {
+  $dt = new DateTime($this->departureVia);
+  return $dt->format('H:i');
+}
+
   /**
    * Get a link to the detail page of this connection
    * @return string link to page
@@ -129,6 +142,8 @@ public function getPlatformVia() {
      $platform = urlencode($this->getPlatformVia());
      $arrival = urlencode($this->getArrivalFormatted());
      $departure = urlencode($this->getDepartureFormatted());
+     $arrivalVia = urlencode($this->getArrivalViaFormatted());
+     $departureVia = urlencode($this->getDepartureViaFormatted());
 
      $link = "/Route/detail";
      $params = "?route=$home:$vias";
@@ -136,6 +151,8 @@ public function getPlatformVia() {
      $params .= "&platform=$platform";
      $params .= "&arrival=$arrival";
      $params .= "&departure=$departure";
+     $params .= "&arrivalvia=$arrivalVia";
+     $params .= "&departurevia=$departureVia";
 
      return $link . $params;
    }

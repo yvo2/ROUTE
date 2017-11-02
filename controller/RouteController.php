@@ -11,6 +11,8 @@ class RouteController extends Controller {
     @$platform = htmlspecialchars($_GET["platform"]);
     @$arrival = htmlspecialchars($_GET["arrival"]);
     @$departure = htmlspecialchars($_GET["departure"]);
+    @$arrivalVia = htmlspecialchars($_GET["arrivalvia"]);
+    @$departureVia = htmlspecialchars($_GET["departurevia"]);
     $home = explode(':', $route)[0];
     $vias = explode(':', $route)[1];
 
@@ -24,6 +26,8 @@ class RouteController extends Controller {
     $view->platform = $platform;
     $view->arrival = $arrival;
     $view->departure = $departure;
+    $view->arrivalVia = $arrivalVia;
+    $view->departureVia = $departureVia;
     $view->homebase = $home;
     $view->route = $route;
     $view->validationerror = "";
