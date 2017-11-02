@@ -8,6 +8,9 @@ class RouteController extends Controller {
     $commentRepository = new CommentRepository();
     @$route = htmlspecialchars($_GET["route"]);
     @$duration = htmlspecialchars($_GET["duration"]);
+    @$platform = htmlspecialchars($_GET["platform"]);
+    @$arrival = htmlspecialchars($_GET["arrival"]);
+    @$departure = htmlspecialchars($_GET["departure"]);
     $home = explode(':', $route)[0];
     $vias = explode(':', $route)[1];
 
@@ -18,6 +21,9 @@ class RouteController extends Controller {
     $view->title = 'Details';
     $view->via = $vias;
     $view->duration = $duration;
+    $view->platform = $platform;
+    $view->arrival = $arrival;
+    $view->departure = $departure;
     $view->homebase = $home;
     $view->route = $route;
     $view->validationerror = "";

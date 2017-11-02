@@ -11,10 +11,28 @@
 					<th>Via</th>
 					<td><?= $via ?>
 				</tr>
+        <?php if (strlen($departure) != 0) { ?>
+        <tr>
+					<th>Abfahrt</th>
+					<td><?= $departure ?>
+				</tr>
+        <?php } ?>
+        <?php if (strlen($arrival) != 0) { ?>
+        <tr>
+					<th>Ankunft</th>
+					<td><?= $arrival ?>
+				</tr>
+        <?php } ?>
 				<?php if (strlen($duration) != 0) { ?>
 					<tr>
 						<th>Dauer</th>
 						<td><?= Connection::getDurationFormatted($duration) ?>
+					</tr>
+				<?php } ?>
+        <?php if (strlen($platform) != 0) { ?>
+					<tr>
+						<th>Umstiegsgleise</th>
+						<td><?= $platform ?>
 					</tr>
 				<?php } ?>
 

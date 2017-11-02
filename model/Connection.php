@@ -112,7 +112,7 @@ public function getPlatformVia() {
   //unset($trainChanges[0]);
 
   foreach ($trainChanges as $section) {
-    $result .= $section->departure->platform . ":" . $section->arrival->platform . "|";
+    $result .= "Abfahrt: " . $section->departure->platform . " Ankunft: " . $section->arrival->platform . " | ";
   }
 
   return $result;
@@ -126,10 +126,16 @@ public function getPlatformVia() {
      $vias = urlencode($this->getVias());
      $duration = urlencode($this->getDuration());
      $home = urlencode($this->getFrom());
+     $platform = urlencode($this->getPlatformVia());
+     $arrival = urlencode($this->getArrivalFormatted());
+     $departure = urlencode($this->getDepartureFormatted());
 
      $link = "/Route/detail";
      $params = "?route=$home:$vias";
      $params .= "&duration=$duration";
+     $params .= "&platform=$platform";
+     $params .= "&arrival=$arrival";
+     $params .= "&departure=$departure";
 
      return $link . $params;
    }
