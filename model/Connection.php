@@ -9,6 +9,8 @@ class Connection {
   public $duration;
   public $arrival;
   public $departure;
+  public $platformFrom;
+  public $platformTo;
   public $sections = array();
 
   public function __construct($connection) {
@@ -17,6 +19,8 @@ class Connection {
     $this->duration = $connection->duration;
     $this->arrival = $connection->to->arrival;
     $this->departure = $connection->from->departure;
+    $this->platformFrom = $connection->sections[0]->departure->platform;
+    $this->platformTo = $connection->sections[count($connection->sections)-1]->arrival->platform;
 
     foreach ($connection->sections as $section) {
       $this->sections[] = $section;
@@ -39,6 +43,14 @@ class Connection {
 
   public function getTo() {
     return $this->to;
+  }
+
+  public function getPlatformFrom() {
+    return $this->platformFrom;
+  }
+
+  public function getPlatformTo() {
+    return $this->platformTo;
   }
 
   public function getDuration() {
@@ -89,6 +101,21 @@ public function getViasFormatted() {
   }
 
   return substr($result, 0, -strlen($arrow));
+}
+
+public function getPlatformVia() {
+  $result = "";
+
+  //$trainChanges = array_pop($this->sections);
+  $trainChanges = $this->sections;
+  //unset($trainChanges[count($trainChanges)-1]);
+  //unset($trainChanges[0]);
+
+  foreach ($trainChanges as $section) {
+    $result .= $section->departure->platform . ":" . $section->arrival->platform . "|";
+  }
+
+  return $result;
 }
 
   /**

@@ -29,9 +29,9 @@
             ?>
             <a class="no-hover" href="<?= $connection->getDetailLink() ?>">
               <div class="card">
-                <p class="cardtext">Abfahrt Home: <?= $connection->from . ", ab " . $connection->getDepartureFormatted() ?></p>
+                <p class="cardtext">Abfahrt Home: <?= $connection->from . ", ab " . $connection->getDepartureFormatted() . ", auf Gleis " . $connection->getPlatformFrom() ?></p>
                 <p class="cardtext">Umsteigeorte: <?= $connection->getViasFormatted() ?></p>
-                <p class="cardtext">Ankunft Home: <?= $connection->getArrivalFormatted() ?></p>
+                <p class="cardtext">Ankunft Home: <?= $connection->getArrivalFormatted() . ", auf Gleis " . $connection->getPlatformTo()  ?></p>
                 <p class="cardtext"><?= $connection->getConnectionDuration() ?></p>
               </div>
             </a>
