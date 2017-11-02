@@ -9,8 +9,7 @@
        ?>
       <div class="footercontent">
         &copy; by Yvo Hofer and Lars Bärtschi <br> Powered by <a target="_blank" href="http://transport.opendata.ch">OpenData.ch</a><br>
-        Diese Seite steht in keiner Beziehung mit der Schweizerischen Bundesbahn (SBB) oder einem anderen Transportunternehmen. <br>
-        <a href="/impressum" target="_blank">Impressum</a><br>
+        <a href="/impressum" target="_blank">Impressum</a><br><br>
         Letzte Aktualisierung: <strong><?= $config["deploy"] ?></strong>
       </div>
     </div>

@@ -6,6 +6,7 @@
 <span>E-Mail: yvo.a.hofer@hotmail.com</span>
 <br><br>
 <h3>Haftung f&uuml;r Inhalte</h3>
+<p>Diese Seite steht in keiner Beziehung mit der Schweizerischen Bundesbahn (SBB) oder einem anderen Transportunternehmen.</p>
 <p>Als Diensteanbieter sind wir f&uuml;r eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Wir sind als Diensteanbieter jedoch nicht verpflichtet, &uuml;bermittelte
   oder gespeicherte fremde Informationen zu &uuml;berwachen oder nach Umst&auml;nden zu forschen, die auf eine rechtswidrige T&auml;tigkeit hinweisen.</p>
 <p> Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unber&uuml;hrt. Eine diesbez&uuml;gliche Haftung ist jedoch erst ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung m&ouml;glich.
